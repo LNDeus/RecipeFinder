@@ -7,7 +7,7 @@
   "author": "Lucas Nörenberg de Deus <lucas@norenberg.com.br>",
   "license": "MIT",
   "scripts": {
-    "start": "node app/bin/server.js",
+    "start": "node src/bin/server.js",
     "eslint:check": "yarn run eslint .",
     "eslint:fix": "yarn run eslint . --fix",
     "test": "yarn run jest --passWithNoTests --forceExit --detectOpenHandles ./tests/*"
