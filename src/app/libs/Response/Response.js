@@ -21,16 +21,8 @@ class Response {
    * Setter for status.
    * @param value
    */
-  set status(value) {
+  setStatus(value) {
     this.res.status(value);
-  }
-
-  /**
-   * Getter for status.
-   * @return {*}
-   */
-  get status() {
-    return this.res.status;
   }
 
   /**
@@ -63,7 +55,7 @@ class Response {
 
     if (this.isArray || this.isObject || this.isClientErr) {
       if (this.isClientErr) {
-        this.status(this.body.statusCode);
+        this.setStatus(this.body.errorResource.statusCode);
 
         this.responseData = ErrorResponseTemplate.apply(this.body.format());
       } else {
