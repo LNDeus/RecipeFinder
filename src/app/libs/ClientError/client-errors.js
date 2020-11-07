@@ -31,7 +31,7 @@ module.exports = [
     name: 'THIRD_PART_SERVICES_UNAVAILABLE_ERROR',
     description: `Looks like a third part service we depend on is unavailable. ${texts.tryAgainLater}`,
     statusCode: 503,
-    extraFields: extraFields.thirdPartServiceError
+    extraField: extraFields.thirdPartServiceError
   },
   {
     code: 3,
