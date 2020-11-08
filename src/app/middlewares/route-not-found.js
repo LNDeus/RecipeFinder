@@ -6,5 +6,6 @@ module.exports = (req, res) => {
     return (new Response(res)).send(new ClientError(ClientError.ERROR_PATH_NOT_FOUND, req.path));
   } catch (e) {
     console.error(e);
+    return res.sendStatus(500);
   }
 };
