@@ -1,5 +1,5 @@
 const mock = require('./mock');
-const {ToolBox} = require('../../../src/app/libs');
+const {ToolBox} = require('../../../app/libs');
 
 test('Testing toolbox methods', () => {
   expect(

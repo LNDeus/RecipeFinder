@@ -1,6 +1,6 @@
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
-const { RecipePuppy } = require('../../../src/app/services');
+const { RecipePuppy } = require('../../../app/services');
 const mock = require('./mock');
 const gifMock = require('../Giphy/mock');
 

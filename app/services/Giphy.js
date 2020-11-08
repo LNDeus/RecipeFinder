@@ -1,5 +1,6 @@
 const querystring = require('querystring');
 const axios = require('axios');
+const { ClientError } = require('../libs');
 
 class Giphy {
   static url = 'https://api.giphy.com/v1/gifs/search';

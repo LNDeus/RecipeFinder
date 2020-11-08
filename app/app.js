@@ -2,8 +2,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
-const routes = require('./app/routes');
-const middlewares = require('./app/middlewares');
+const routes = require('./routes');
+const middlewares = require('./middlewares');
 const app = express();
 
 app.use(cookieParser());

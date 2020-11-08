@@ -1,5 +1,5 @@
-const Reponse = require('../../../src/app/libs/Response');
-const ClientError = require('../../../src/app/libs/ClientError');
+const Reponse = require('../../../app/libs/Response');
+const ClientError = require('../../../app/libs/ClientError');
 const mock = require('./mock');
 
 test('Sending response to client', () => {

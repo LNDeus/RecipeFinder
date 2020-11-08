@@ -1,5 +1,5 @@
-const ClientError = require('../../../src/app/libs/ClientError');
-const { clientErrors } = require('../../../src/app/libs/ClientError');
+const ClientError = require('../../../app/libs/ClientError');
+const { clientErrors } = require('../../../app/libs/ClientError');
 const { extraValues } = require('./mock');
 
 test('Instantiating all ClientErrors', () => {

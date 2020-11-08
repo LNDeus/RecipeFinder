@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const { ClientError } = require('../libs');
+const { ClientError } = require('./index');
 
 class Validation {
   /**

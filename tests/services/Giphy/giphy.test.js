@@ -1,6 +1,6 @@
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
-const {Giphy} = require('../../../src/app/services');
+const {Giphy} = require('../../../app/services');
 const mock = require('./mock');
 
 let axiosMock;

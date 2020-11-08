@@ -36,9 +36,9 @@ class RecipePuppy {
         title: recipe.title,
         ingredients: ToolBox.stringListToArray(recipe.ingredients, {
           splitter: ', ',
-          order: true
+          order: true,
         }),
-        link: recipe.href
+        link: recipe.href,
       };
 
       if (options.searchGif) {
@@ -51,9 +51,10 @@ class RecipePuppy {
     const recipes = await Promise.all(data.results);
 
     return {
-      keywords: options.ingredients ? ToolBox.stringListToArray(options.ingredients) : undefined,
+      keywords: options.ingredients ? ToolBox.stringListToArray(
+        options.ingredients) : undefined,
       query: options.searchQuery,
-      recipes
+      recipes,
     };
   }
 }
