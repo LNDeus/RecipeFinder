@@ -7,7 +7,9 @@
   "author": "Lucas Nörenberg de Deus <lucas@norenberg.com.br>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/bin/server.js",
+    "start": "pm2 start ecosystem.config.js --env production",
+    "start:dev": "pm2 start ecosystem.config.js --env development",
+    "logs": "pm2 logs",
     "eslint:check": "yarn run eslint .",
     "eslint:fix": "yarn run eslint . --fix",
     "test": "jest"
