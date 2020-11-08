@@ -1,0 +1,13 @@
+version: "3"
+services:
+  recipe-finder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./app:/src/app"
+      - "./ecosystem.config.js:/src/ecosystem.config.js"
+      - "./.env:/src/.env"
+    ports:
+      - 443:443
+      - 80:80
