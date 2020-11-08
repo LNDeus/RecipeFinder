@@ -47,7 +47,8 @@ class RecipePuppy {
       };
 
       if (options.searchGif) {
-        mappedRecipe.gif = (await Giphy.search(recipe.title)).data[0].url;
+        const gif = (await Giphy.search(recipe.title)).data;
+        mappedRecipe.gif = gif && gif.length > 0 ? gif[0].url : null;
       }
 
       return mappedRecipe;
