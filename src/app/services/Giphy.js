@@ -1,8 +1,8 @@
-const Client = require('../libs/Client');
+const querystring = require('querystring');
+const axios = require('axios');
 
 class Giphy {
-  static host = 'api.giphy.com';
-  static path = '/v1/gifs/search';
+  static url = 'https://api.giphy.com/v1/gifs/search';
 
   /**
    * Searches for a gif.
@@ -16,11 +16,9 @@ class Giphy {
       limit: 1
     };
 
-    const { data } = await Client.get({
-      hostname: this.host,
-      path: this.path,
-      query
-    });
+    const { data } = await axios.get(
+      Giphy.url + `?${querystring.stringify(query)}`
+    );
 
     return data;
   }

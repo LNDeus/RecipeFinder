@@ -1,9 +1,10 @@
-const { Client, ToolBox } = require('../libs');
+const axios = require('axios');
+const querystring = require('querystring');
+const { ToolBox } = require('../libs');
 const Giphy = require('./Giphy');
 
 class RecipePuppy {
-  static host = 'www.recipepuppy.com';
-  static path = '/api';
+  static url = 'http://www.recipepuppy.com/api';
 
   /**
    * Searches for recipes.
@@ -28,11 +29,7 @@ class RecipePuppy {
       query.q = options.searchQuery;
     }
 
-    const { data } = await Client.get({
-      hostname: this.host,
-      path: this.path,
-      query
-    });
+    const { data } = await axios.get(RecipePuppy.url + `?${querystring.stringify(query)}`);
 
     data.results = data.results.map(async (recipe) => {
       const mappedRecipe = {
