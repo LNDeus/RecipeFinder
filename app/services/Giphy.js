@@ -19,7 +19,10 @@ class Giphy {
 
     const { data } = await axios.get(
       Giphy.url + `?${querystring.stringify(query)}`
-    );
+    ).catch((err) => {
+      console.error(err);
+      throw new ClientError(ClientError.ERROR_THIRD_PART_SERVICES_UNAVAILABLE_ERROR, 'Giphy');
+    });
 
     return data;
   }

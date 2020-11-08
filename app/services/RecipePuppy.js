@@ -1,6 +1,6 @@
 const axios = require('axios');
 const querystring = require('querystring');
-const { ToolBox } = require('../libs');
+const {ToolBox, ClientError} = require('../libs');
 const Giphy = require('./Giphy');
 
 class RecipePuppy {
@@ -29,7 +29,12 @@ class RecipePuppy {
       query.q = options.searchQuery;
     }
 
-    const { data } = await axios.get(RecipePuppy.url + `?${querystring.stringify(query)}`);
+    const {data} = await axios.get(
+      RecipePuppy.url + `?${querystring.stringify(query)}`
+    ).catch((err) => {
+      console.error(err);
+      throw new ClientError(ClientError.ERROR_THIRD_PART_SERVICES_UNAVAILABLE_ERROR, 'RecipePuppy');
+    });
 
     data.results = data.results.map(async (recipe) => {
       const mappedRecipe = {
